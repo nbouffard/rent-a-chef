@@ -25,6 +25,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_182409) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.date "date"
+    t.time "time"
+    t.bigint "user_id", null: false
+    t.bigint "chef_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chef_id"], name: "index_messages_on_chef_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.string "comment"
@@ -58,6 +71,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_182409) do
 
   add_foreign_key "bookings", "users"
   add_foreign_key "bookings", "users", column: "chef_id"
+  add_foreign_key "messages", "users"
+  add_foreign_key "messages", "users", column: "chef_id"
   add_foreign_key "reviews", "users"
   add_foreign_key "reviews", "users", column: "chef_id"
 end
