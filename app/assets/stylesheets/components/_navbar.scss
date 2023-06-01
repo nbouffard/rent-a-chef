@@ -1,16 +1,116 @@
-.navbar-container {
- margin: 0 auto;
- width: 1200px;
- height: 100%;
- padding: 5px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;800&display=swap');
 
 .navbar {
-  justify-content: space-between;
+  padding: 0;
   background-color: white;
-  width: 100%;
 }
 
-.navbar-icon{
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  width: 1000px;
+  height: 100px;
+  padding: 0 5px;
+  padding-bottom: 5px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.navbar-bottom-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+.navbar-logo {
   width: 200px;
+  margin-right: 10px;
+}
+
+.navbar-button {
+  margin-top: 10px;
+}
+
+.navbar-container .signup-button {
+  width: 150px;
+  height: 40px ;
+  background-color: #F1F1F1;
+  color: #064420;
+  border: 0.5px solid #B6BFB9 !important;
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.signup-button:hover {
+  background-color: #E4EFE7;
+  color: #064420;
+  border: 0.5px solid #B6BFB9 !important;
+  transition-duration: 0.5s;
+}
+
+.arrow {
+  margin-left: 5px;
+}
+
+.navbar-notification-bell {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-notification-icon {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.navbar-notification-count {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(202, 72, 72);
+  color: white;
+  font-size: 12px;
+  padding: 1px 4px;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  right: 34px;
+  text-align: center;
+}
+
+.navbar-icons-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  right: 0;
+  margin-left: 10px;
+}
+
+.navbar-icons-container > div {
+  margin-left: 10;
+}
+
+.navbar-menu-icon {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.fa-bell:hover {
+  color:#7b877e !important;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.fa-bars:hover {
+  color: #7b877e !important;
+  transition-duration: 0.2s;
+  cursor: pointer;
 }

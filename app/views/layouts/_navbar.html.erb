@@ -1,5 +1,21 @@
 <div class="navbar">
   <div class="navbar-container">
-    <%= image_tag "https://i.ibb.co/3YZD43H/rent-a-chef-logo.png", class: "navbar-icon" %>
+    <div class="navbar-icons-container">
+      <div class="navbar-notification-bell">
+        <span class="navbar-notification-icon"><i class="fa-solid fa-bell fa-lg" style="color: #062c14;"></i></span>
+        <span class="navbar-notification-count">#</span>
+      </div>
+      <div class="navbar-menu-icon">
+        <span><i class="fa-solid fa-bars fa-xl" style="color: #062c14;"></i></span>
+      </div>
+    </div>
+    <div class="navbar-bottom-container">
+      <div class="navbar-logo">
+        <%= image_tag "https://i.ibb.co/3YZD43H/rent-a-chef-logo.png", class: "navbar-logo" %>
+      </div>
+      <div class="navbar-button">
+        <button class="signup-button">Sign Up <span class="arrow">&#8594;</span></button>
+      </div>
+    </div>
   </div>
 </div>
