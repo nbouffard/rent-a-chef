@@ -1,0 +1,13 @@
+<div class="container">
+  <h1><%= @chef.first_name %> <%= @chef.last_name %></h1>
+  <p><%= @chef.description %></p>
+  <p><%= @chef.price %></p>
+
+  <% if @chef == current_user %>
+    <%= link_to 'Edit profile' %>
+  <% end %>
+
+  <%= link_to 'Home', root_path %>
+  |
+  <%= link_to 'Chefs', users_path %>
+</div>
