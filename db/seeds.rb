@@ -12,12 +12,9 @@ require 'faker'
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     is_chef: true,
-    # price: 50.99,
-    # description: Faker::Lorem.sentence,
     address: Faker::Address.full_address,
     email: Faker::Internet.email,
     password: Faker::Internet.password(min_length: 8),
     date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65)
   )
-  # chef.skip_confirmation!
 end
