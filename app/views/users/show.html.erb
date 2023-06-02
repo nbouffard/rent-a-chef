@@ -6,6 +6,9 @@
   <% if @chef == current_user %>
     <%= link_to 'Edit profile' %>
   <% end %>
+  <% if @chef == current_user %>
+    <%= link_to 'Delete profile' %>
+  <% end %>
 
   <%= link_to 'Home', root_path %>
   |
