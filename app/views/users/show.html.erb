@@ -3,6 +3,10 @@
   <p><%= @chef.description %></p>
   <p><%= @chef.price %></p>
 
+  <% if @chef == current_user %>
+    <%= link_to 'Edit profile' %>
+  <% end %>
+
   <%= link_to 'Home', root_path %>
   |
   <%= link_to 'Chefs', users_path %>
