@@ -4,7 +4,7 @@
   <% @chefs.each do |chef| %>
   <% if chef.is_chef == true %>
     <li>
-      <%= "#{chef.first_name} #{chef.last_name}" %>
+      <%= link_to "#{chef.first_name} #{chef.last_name}", user_path(chef) %>
     </li>
   <% end %>
   <% end %>
