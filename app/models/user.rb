@@ -8,5 +8,5 @@ class User < ApplicationRecord
 
   has_many :reviews
   has_many :bookmarks
-  has_mant :messages
+  has_many :messages
 end
