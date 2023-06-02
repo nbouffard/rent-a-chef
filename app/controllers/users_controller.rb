@@ -7,4 +7,10 @@ class UsersController < ApplicationController
   def show
     @chef = User.find(params[:id])
   end
+
+  private
+
+  def user_params
+    params.require(:user).permit(photos: [])
+  end
 end
