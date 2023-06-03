@@ -40,21 +40,22 @@
 .navbar-container .signup-button {
   width: 150px;
   height: 40px ;
-  background-color: #F1F1F1;
-  color: #064420;
+  background-color: #064420;
+  color: #B6BFB9;
   border: 0.5px solid #B6BFB9 !important;
-  padding: 10px 10px;
+  padding: 0px;
   border-radius: 10px;
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
+  font-weight: 700;
+  text-align: center;
 }
 
 .signup-button:hover {
-  background-color: #E4EFE7;
-  color: #064420;
+  background-color: #0a562a;
+  color: #B6BFB9;
   border: 0.5px solid #B6BFB9 !important;
-  transition-duration: 0.5s;
+  transition-duration: 0.2s;
 }
 
 .arrow {
