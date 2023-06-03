@@ -1,8 +1,8 @@
 <div class="container">
   <h1><%= @chef.first_name %> <%= @chef.last_name %></h1>
 
-  <p><strong>Bio:</strong> <%= @chef.bio %></p>
-  <p><strong>Specialties:</strong> <%= @chef.specialties %></p>
+  <p><strong>Bio:</strong> <%= @chef.description %></p>
+
 
   <%= link_to 'Book Chef', book_chef_user_path(@chef) %>
 
