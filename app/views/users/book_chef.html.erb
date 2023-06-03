@@ -1,12 +1,11 @@
 <div class="container">
-  <h1>Book Chef</h1>
+  <h1>Book a Chef</h1>
 
-  <%= render 'shared/errors', errors: @booking.errors if @booking.errors.any? %>
+<%= render 'devise/shared/error_booking', errors: @booking.errors if @booking.errors.any? %>
 
   <%= form_with(model: @booking, url: create_booking_user_path(@chef), method: :post) do |form| %>
     <div>
-      <%= form.label :status %>
-      <%= form.text_field :status %>
+      <strong>Status:</strong> Available
     </div>
 
     <div>
@@ -14,8 +13,9 @@
       <%= form.date_select :date %>
     </div>
 
-    <%= form.submit 'Book Chef' %>
-  <% end %>
+  <%= form.hidden_field :chef_id, value: @chef.id %>
+  <%= form.submit 'Book Chef' %>
+<% end %>
 
   <%= link_to 'Back', user_path(@chef) %>
 </div>

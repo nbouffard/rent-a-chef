@@ -26,16 +26,43 @@ class UsersController < ApplicationController
     @booking = Booking.new
   end
 
+
   def create_booking
     @chef = User.find(params[:id])
+
+    if @chef == current_user
+      redirect_to user_path(current_user), notice: 'You cannot book yourself.'
+      return
+    end
+
     @booking = @chef.bookings.build(booking_params)
     @booking.user = current_user
+    @booking.status = "Pending"
+
     if @booking.save
-      redirect_to root_path, notice: 'Chef booked successfully!'
+      redirect_to user_path(current_user), notice: 'Booking request sent.'
     else
       render :book_chef
     end
   end
+
+  def my_bookings
+    @bookings = current_user.bookings
+  end
+
+  def destroy_booking
+    @booking = Booking.find_by(id: params[:id])
+    if @booking
+      if @booking.destroy
+        redirect_to my_bookings_users_path, notice: 'Booking deleted successfully.'
+      else
+        redirect_to my_bookings_users_path, alert: 'Failed to delete booking.'
+      end
+    else
+      redirect_to my_bookings_users_path, alert: 'Booking not found.'
+    end
+  end
+
   private
 
   def chef_params
@@ -54,6 +81,6 @@ class UsersController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:status, :date)
+    params.require(:booking).permit(:status, :date, :chef_id)
   end
 end

@@ -1,0 +1,19 @@
+<h1>My Bookings</h1>
+
+<% if @bookings.empty? %>
+  <p>No bookings found.</p>
+<% else %>
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li>
+        <p>Chef: <%= booking.chef.first_name %> <%= booking.chef.last_name %></p>
+        <p>Status: <%= booking.status %></p>
+        <p>Booking Date: <%= booking.date %></p>
+
+         <%= button_to 'Delete', user_booking_path(current_user, booking), method: :delete, class: 'btn btn-danger' %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to 'Home', root_path %>
