@@ -23,6 +23,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def book_chef
+    @chef = User.find(params[:id])
+    @booking = Booking.new
+  end
+
+  def create_booking
+    @chef = User.find(params[:id])
+    @booking = @chef.bookings.build(booking_params)
+    @booking.user = current_user
+    if @booking.save
+      redirect_to root_path, notice: 'Chef booked successfully!'
+    else
+      render :book_chef
+    end
+  end
   private
 
   def chef_params
@@ -31,5 +46,9 @@ class UsersController < ApplicationController
 
   def ensure_chef
     redirect_to root_path unless current_user.is_chef?
+  end
+
+  def booking_params
+    params.require(:booking).permit(:status, :date)
   end
 end
