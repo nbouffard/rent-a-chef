@@ -10,7 +10,4 @@ class User < ApplicationRecord
   has_many :bookmarks
   has_many :messages
 
-  validates :bio, presence: true
-  validates :specialties, presence: true
-
 end
