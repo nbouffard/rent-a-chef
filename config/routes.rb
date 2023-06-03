@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   # root "articles#index"
 
 
-  resources :users, only: %i[index show] do
+  resources :users, only: %i[index show edit update] do
     get 'book_chef', on: :member
     post 'create_booking', on: :member
+
   end
 
-  resources :chefs, only: [:edit, :update]
+
   resources :bookings, only: [:new, :create]
 end
