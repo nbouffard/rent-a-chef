@@ -1,0 +1,23 @@
+<div class="container">
+  <h1><%= @chef.first_name %> <%= @chef.last_name %></h1>
+  <p><%= @chef.description %></p>
+  <p>Price <%= number_to_currency(@chef.price, precision: 0) %>/hr</p>
+  <%= cl_image_tag @chef.profile_photo.key, height: 50, wifth: 50 %>
+  <% @chef.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400 %>
+  <% end %>
+
+
+  <% if @chef == current_user %>
+    <%= link_to 'Edit profile',edit_user_path(@chef) %>
+  <% end %>
+
+  <%= link_to 'Home', root_path %>
+  |
+  <%= link_to 'Chefs', users_path %>
+  |
+  <% unless @chef == current_user %>
+    <%= link_to "Book chef", new_user_booking_path(@chef) %>
+  <% end %>
+
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>All Chefs</h1>
+<ul>
+  <% @chefs.each do |chef| %>
+  <% if chef.is_chef == true %>
+    <li>
+      <%= link_to "#{chef.first_name} #{chef.last_name}", user_path(chef) %>
+    </li>
+  <% end %>
+  <% end %>
+</ul>
+<%= link_to 'Home', root_path %>
+</div>
