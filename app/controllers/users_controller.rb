@@ -31,5 +31,10 @@ class UsersController < ApplicationController
   def ensure_chef
     redirect_to root_path unless current_user.is_chef?
     @chef = current_user
+
+  end
+
+  def user_params
+    params.require(:user).permit(photos: [])
   end
 end
