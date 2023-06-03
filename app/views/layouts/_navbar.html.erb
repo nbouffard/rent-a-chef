@@ -2,16 +2,18 @@
   <div class="navbar-container">
     <div class="navbar-icons-container">
       <div class="navbar-notification-bell">
-        <span class="navbar-notification-icon"><i class="fa-solid fa-bell fa-lg" style="color: #062c14;"></i></span>
-          <% if user_signed_in? && current_user.messages.unread.exists? %>
-            <span class="navbar-notification-count">
-              <%= current_user.messages.unread.count %>
-            </span>
-          <% else %>
-            <span class="navbar-notification-count hide-notification">
-            0
-            </span>
-          <% end %>
+        <% if user_signed_in? %>
+          <span class="navbar-notification-icon"><i class="fa-solid fa-bell fa-lg" style="color: #062c14;"></i></span>
+            <% if user_signed_in? && current_user.messages.unread.exists? %>
+              <span class="navbar-notification-count">
+                <%= current_user.messages.unread.count %>
+              </span>
+            <% else %>
+              <span class="navbar-notification-count hide-notification">
+              0
+              </span>
+            <% end %>
+        <% end %>
       </div>
     <div class="navbar-menu-icon">
         <span><i class="fa-solid fa-bars fa-xl" style="color: #062c14;"></i></span>
