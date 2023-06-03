@@ -38,6 +38,14 @@ class UsersController < ApplicationController
       render :book_chef
     end
   end
+
+  def check_availability
+    @chef = User.find(params[:id])
+    current_date = Date.today
+    conflicting_bookings = chef.bookings.where(date: current_date)
+    @availability = conflicting_bookings.empty?
+  end
+
   private
 
   def chef_params

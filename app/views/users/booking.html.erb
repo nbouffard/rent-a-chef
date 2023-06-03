@@ -1,6 +1,14 @@
 <div class="container">
   <h1>Book Chef</h1>
 
+  <h2>Chef Availability</h2>
+
+  <% if @availability %>
+    <p>The chef is available.</p>
+  <% else %>
+    <p>The chef is not available.</p>
+  <% end %>
+
   <%= render 'shared/errors', errors: @booking.errors if @booking.errors.any? %>
 
   <%= form_with(model: @booking, url: create_booking_user_path(@chef), method: :post) do |form| %>

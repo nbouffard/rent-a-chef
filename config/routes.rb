@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[index show] do
     get 'book_chef', on: :member
     post 'create_booking', on: :member
+    get 'check_availability', on: :member
   end
 
   resources :chefs, only: [:edit, :update]
