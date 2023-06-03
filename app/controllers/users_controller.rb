@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   private
 
   def chef_params
-    params.require(:user).permit(:first_name, :last_name, :bio, :specialties)
+    params.require(:user).permit(:first_name, :last_name, :description, :address, :date_of_birth)
   end
 
   def ensure_chef
