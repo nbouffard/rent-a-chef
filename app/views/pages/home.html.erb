@@ -3,7 +3,7 @@
     <div class="homepage-container">
       <div class="homepage-text-container">
         <h1>Find a chef to cook for you wherever, whenever.</h1>
-        <div class="homepage- form-wrapper">
+        <div class="homepage-form-wrapper">
         <%= form_tag("/search", method: "get", class: "form-container") do %>
           <%= text_field_tag(:query, nil, placeholder: "What are you looking for?", style: "width: 300px;") %>
           <%= submit_tag("Search") %>
