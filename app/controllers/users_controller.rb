@@ -11,13 +11,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @chef = current_user
   end
 
   def update
-    @chef = current_user
-    if @chef.update(chef_params)
-      redirect_to @chef, notice: 'Profile updated successfully!'
+    if current_user.update(chef_params)
+      redirect_to current_user, notice: 'Profile updated successfully!'
     else
       render :edit
     end
@@ -27,10 +25,10 @@ class UsersController < ApplicationController
 
   def chef_params
     params.require(:user).permit(:first_name, :last_name, :description, :address, :date_of_birth)
-
   end
 
   def ensure_chef
-    redirect_to root_path unless current_user.is_chef?
+    @chef = current_user
+    redirect_to root_path unless @chef.is_chef?
   end
 end
