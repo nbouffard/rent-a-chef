@@ -5,11 +5,11 @@
 
   <% if @chef == current_user %>
     <%= link_to 'Edit profile',edit_user_path(@chef) %>
-  <% end %>
+  <% else %>
 
 
   <%= link_to 'Book Chef', book_chef_user_path(@chef) %>
-
+  <% end %>
 
   <%= link_to 'Home', root_path %>
   |
