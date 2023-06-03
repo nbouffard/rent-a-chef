@@ -11,13 +11,18 @@
   </div>
 
   <div>
-    <%= form.label :bio %>
-    <%= form.text_area :bio %>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
   </div>
 
   <div>
-    <%= form.label :specialties %>
-    <%= form.text_field :specialties %>
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :date_of_birth %>
+    <%= form.date_field :date_of_birth %>
   </div>
 
   <%= form.submit 'Update Profile' %>
