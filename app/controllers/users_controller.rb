@@ -29,8 +29,8 @@ class UsersController < ApplicationController
   end
 
   def ensure_chef
-    redirect_to root_path unless current_user.is_chef?
     @chef = current_user
+    redirect_to root_path unless @chef.is_chef?
 
   end
 
