@@ -3,6 +3,17 @@
     <div class="homepage-container">
       <div class="homepage-text-container">
         <h1>Find a chef to cook for you wherever, whenever.</h1>
+        <div class="homepage- form-wrapper">
+        <%= form_tag("/search", method: "get", class: "form-container") do %>
+          <%= text_field_tag(:query, nil, placeholder: "What are you looking for?", style: "width: 300px;") %>
+          <%= submit_tag("Search") %>
+        <% end %>
+      </div>
+      <div class="filter-container">
+        <%= select_tag(:cuisine, options_for_select([["Cuisine"], "Italian", "Mexican", "Japanese"], placeholder: "Select Cuisine")) %>
+        <%= select_tag(:location, options_for_select([["City"], "New York", "Los Angeles", "London"], prompt: "Select Location")) %>
+        <%= select_tag(:price_range, options_for_select([["Price Range"], "€ - Affordable", "€€ - Moderate", "€€€ - Expensive"], prompt: "Select Price Range")) %>
+      </div>
       </div>
       <div class="homepage-image-container">
         <img src="https://images.unsplash.com/photo-1581349485608-9469926a8e5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" alt="Chef Image" class="homepage-image">
