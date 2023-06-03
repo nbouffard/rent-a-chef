@@ -22,7 +22,7 @@
         <%= image_tag "https://i.ibb.co/3YZD43H/rent-a-chef-logo.png", class: "navbar-logo" %>
       </div>
       <div class="navbar-button">
-        <button class="signup-button"><i class="fa-solid fa-lock fa-2xs" style="color: #f0f0f0;"></i> Sign In</button><button class="signup-button"><i class="fa-solid fa-user fa-2xs" style="color: #f0f0f0;"></i></i> Register</button>
+        <button class="signup-button" onclick="window.location.href='<%= user_session_path %>'"><i class="fa-solid fa-lock fa-2xs" style="color: #f0f0f0;"></i> Sign In</button><button class="signup-button"><i class="fa-solid fa-user fa-2xs" style="color: #f0f0f0;"></i> Register</button>
       </div>
     </div>
   </div>
