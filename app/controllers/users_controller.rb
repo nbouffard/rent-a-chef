@@ -55,8 +55,6 @@ class UsersController < ApplicationController
     if @booking
       if @booking.destroy
         redirect_to my_bookings_users_path, notice: 'Booking deleted successfully.'
-      else
-        redirect_to my_bookings_users_path, alert: 'Failed to delete booking.'
       end
     else
       redirect_to my_bookings_users_path, alert: 'Booking not found.'
