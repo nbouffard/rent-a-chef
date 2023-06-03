@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   # root "articles#index"
 
 
-  resources :users, only: %i[index show]
-  resources :users, only: [:index]
-  resources :chefs, only: [:edit, :update]
+  resources :users, only: %i[index show edit update]
 
 end
