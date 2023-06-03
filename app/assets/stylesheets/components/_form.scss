@@ -5,7 +5,7 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   z-index: 100;
 }
 
@@ -20,8 +20,8 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.login h2 {
-  font-family: 'Montserrat', sans-serif;
+.form h2 {
+  font-family: 'Montserrat', sans-serif !important;
   font-weight: 400;
 }
 
