@@ -21,6 +21,11 @@
             <i class="fa-solid fa-bars fa-xl" style="color: #062c14;"></i>
           </button>
           <div class="dropdown-menu" id="navbar-dropdown">
+            <div class="dropdown-link-signed-in">
+            <% if user_signed_in? %>
+              <%= link_to "My Profile", user_path(current_user), class: "dropdown-link-style" %>
+            <% end %>
+            </div>
             <div class="dropdown-link">
               <%= link_to "Browse All Chefs", users_path, class: "dropdown-link-style" %>
             </div>
