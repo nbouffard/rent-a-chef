@@ -3,7 +3,7 @@
       <div class="homepage-text-container">
       <h1>Find a chef to cook for you wherever, whenever.</h1>
       <div class="homepage-form-container">
-        <%= simple_form_for("/search", method: "get", html: { class: "form-container" }) do |f| %>
+        <%= simple_form_for("/search", method: "get") do |f| %>
           <div class="search-input-container">
             <%= f.input :query, label: "", input_html: { placeholder: "What are you looking for?", class: "search-field" }, required: false, label_html: { class: "hidden-label" } %>
             <%= f.button :submit, "Search", class: "search-button" %>
@@ -21,4 +21,3 @@
       </div>
     </div>
 </div>
-
