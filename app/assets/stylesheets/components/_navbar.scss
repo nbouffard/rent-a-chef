@@ -53,9 +53,29 @@
   text-align: center;
 }
 
+.navbar-container .signin-button {
+  width: 150px;
+  height: 40px ;
+  background-color: #FDFAF6;
+  color: #0a562a;
+  border: 0.5px solid white !important;
+  padding: 0px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
 .signup-button:hover {
   background-color: #0a562a;
   color: #f0f0f0;
+  border: 0.5px solid white !important;
+  transition-duration: 0.2s;
+}
+
+.signin-button:hover {
+  background-color: #ecebea;
   border: 0.5px solid white !important;
   transition-duration: 0.2s;
 }
