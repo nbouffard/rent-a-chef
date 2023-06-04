@@ -23,7 +23,7 @@
           <div class="dropdown-menu" id="navbar-dropdown">
             <div class="dropdown-link-signed-in">
             <% if user_signed_in? %>
-              <%= link_to "My Profile", user_path(current_user), class: "dropdown-link-style" %>
+              <%= link_to "My Profile", user_path(current_user), class: "dropdown-link-signed-in" %>
             <% end %>
             </div>
             <div class="dropdown-link">
