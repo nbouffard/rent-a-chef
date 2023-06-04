@@ -80,6 +80,23 @@
   transition-duration: 0.2s;
 }
 
+.navbar-container .signout-button {
+  width: 150px;
+  height: 50px;
+  background-color: white;
+  border: 0.5px solid white !important;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 22px;
+  text-align: center;
+}
+
+.signout-button:hover {
+  color: #7b877e;
+  border: 0.5px solid white !important;
+  transition-duration: 0.2s;
+}
+
 .arrow {
   margin-left: 5px;
 }
