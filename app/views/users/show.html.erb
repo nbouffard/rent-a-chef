@@ -1,28 +1,30 @@
-<div class="container">
-  <%= link_to '←Back', users_path, class: 'btn-grey' %>
-  <div class="content-container">
-    <% @chef.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 400, class: 'profile-img'  %>
-      <% end %>
-    <div class="chef-name-inline">
-      <h1><%= @chef.first_name.capitalize %> <%= @chef.last_name.capitalize %></h1>
-      <div class="info-flex">
-        <p>Price <%= number_to_currency(@chef.price, precision: 0) %>/hr</p>
-        <% if @chef == current_user %>
-          <%= link_to 'Edit profile',edit_user_path(@chef), class: 'link' %>
+<div class="container-wrapper">
+  <div class="button-container">
+    <%= link_to '← Back', users_path, class: 'btn-grey' %>
+  </div>
+      <div class="content-container">
+        <% @chef.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height: 400, class: 'profile-img'  %>
+          <% end %>
+        <div class="chef-name-inline">
+          <h1><%= @chef.first_name.capitalize %> <%= @chef.last_name.capitalize %></h1>
+          <div class="info-flex">
+            <p>Price <%= number_to_currency(@chef.price, precision: 0) %>/hr</p>
+            <% if @chef == current_user %>
+              <%= link_to 'Edit profile',edit_user_path(@chef), class: 'link' %>
+            <% else %>
+              <%= link_to "Book chef", new_user_booking_path(@chef), class: 'link' %>
+            <% end %>
+          </div>
+        </div>
+        <div class="decription-flex-container">
+          <p><%= @chef.description %></p>
+          <% if @chef.profile_photo.key.nil? %>
+          <%= image_tag("https://images.unsplash.com/photo-1499715217757-2aa48ed7e593?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80", size: '750x500', alt: 'Default chef profile picture', class: 'show-img') %>
         <% else %>
-          <%= link_to "Book chef", new_user_booking_path(@chef), class: 'link' %>
-        <% end %>
-      </div>
-    </div>
-    <div class="decription-flex-container">
-      <p><%= @chef.description %></p>
-      <% if @chef.profile_photo.key.nil? %>
-      <%= image_tag("https://images.unsplash.com/photo-1499715217757-2aa48ed7e593?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80", size: '750x500', alt: 'Default chef profile picture', class: 'show-img') %>
-    <% else %>
       <%= cl_image_tag @chef.profile_photo.key, height: 650, width: 450, class: 'show-img'  %>
     <% end %>
-
+        </div>
     </div>
   </div>
 </div>
