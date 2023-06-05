@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: %i[new create]
+  before_action :set_booking_user, only: %i[new create]
+  before_action :set_booking, only: %i[edit update]
+
 
   def index
     @bookings = Booking.all
@@ -22,10 +24,15 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @booking = Booking.find(params[:id])
+
   end
 
   def update
+    if @booking.update!(booking_params)
+      redirect_to my_bookings_bookings_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def my_bookings
@@ -37,11 +44,15 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:date)
+    params.require(:booking).permit(:date, :status)
+  end
+
+  def set_booking_user
+    @chef = User.find(params[:user_id])
   end
 
   def set_booking
-    @chef = User.find(params[:user_id])
+    @booking = Booking.find(params[:id])
   end
 
 end

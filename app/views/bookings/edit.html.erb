@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Bookings</h1>
     <%= simple_form_for @booking do |f| %>
-      <%= f.input :status, collection: ['Approve', 'Decline'] %>
+      <%= f.input :status, collection: ['Approved', 'Declined'] %>
       <%= f.button :submit %>
     <% end %>
 </div>
