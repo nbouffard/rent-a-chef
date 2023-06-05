@@ -3,10 +3,6 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[edit update]
 
 
-  def index
-    @bookings = Booking.all
-  end
-
   def new
     @booking = Booking.new
   end

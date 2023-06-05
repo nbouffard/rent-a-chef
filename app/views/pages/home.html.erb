@@ -6,7 +6,9 @@
 <% else %>
   <%= link_to 'Sign in', user_session_path %>
 <% end %>
-
+|
 <% if current_user %>
   <%= link_to 'My bookings', my_bookings_bookings_path %>
 <% end %>
+|
+<%= link_to 'All chefs', users_path %>
