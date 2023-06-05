@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :ensure_chef, only: [:edit, :update]
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :ensure_chef, only: %i[edit update]
 
   def index
     @chefs = User.all
@@ -25,8 +25,8 @@ class UsersController < ApplicationController
   private
 
   def chef_params
-    params.require(:user).permit(:first_name, :last_name, :description, :address, :date_of_birth, :profile_photo, :price, photos: [])
-
+    params.require(:user).permit(:first_name, :last_name, :description, :address, :date_of_birth,
+                                 :profile_photo, :price, photos: [])
   end
 
   def ensure_chef
