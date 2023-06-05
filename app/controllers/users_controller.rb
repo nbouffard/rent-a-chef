@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     end
   end
 
+
   private
 
   def chef_params
