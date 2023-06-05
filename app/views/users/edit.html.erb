@@ -5,6 +5,7 @@
   <%= f.input :address %>
   <%= f.input :date_of_birth %>
   <%= f.input :price %>
+  <%= f.input :profile_photo, as: :file %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit 'Update Profile' %>
 <% end %>
