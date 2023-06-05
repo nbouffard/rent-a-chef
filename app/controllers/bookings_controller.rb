@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[new create]
 
+  def index
+    @bookings = Booking.all
+  end
+
   def new
     @booking = Booking.new
   end
@@ -16,6 +20,19 @@ class BookingsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+  end
+
+  def my_bookings
+    @bookings = current_user.bookings
+    @chef_bookings = Booking.where(chef: current_user)
+  end
+
 
   private
 

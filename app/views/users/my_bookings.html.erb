@@ -1,9 +1,0 @@
-<div class="container">
-  <h1>My bookings</h1>
-  <% @bookings.each do |booking| %>
-  <p>Chef: <%= booking.chef.first_name %></p>
-  <p><%= booking.date %></p>
-  <p>status: <%= booking.status %></p>
-  <hr>
-  <% end %>
-</div>
