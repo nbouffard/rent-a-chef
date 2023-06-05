@@ -31,6 +31,7 @@
 .navbar-logo {
   width: 200px;
   margin-right: 10px;
+  margin-bottom: 4px;
 }
 
 .navbar-button {
@@ -42,9 +43,9 @@
   height: 40px ;
   background-color: #064420;
   color: #f0f0f0;
-  border: 0.5px solid #B6BFB9 !important;
+  border: 0.5px solid white !important;
   padding: 0px;
-  border-radius: 10px;
+  border-radius: 20px;
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -54,7 +55,7 @@
 .signup-button:hover {
   background-color: #0a562a;
   color: #f0f0f0;
-  border: 0.5px solid #B6BFB9 !important;
+  border: 0.5px solid white !important;
   transition-duration: 0.2s;
 }
 
@@ -93,6 +94,7 @@
   top: 0;
   right: 0;
   margin-left: 10px;
+  margin-top: 5px;
 }
 
 .navbar-icons-container > div {
