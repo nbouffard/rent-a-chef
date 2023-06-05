@@ -25,17 +25,16 @@ class UsersController < ApplicationController
   private
 
   def chef_params
-    params.require(:user).permit(:first_name, :last_name, :description, :address, :date_of_birth, :price)
+    params.require(:user).permit(:first_name, :last_name, :description, :address, :date_of_birth, :price, photos: [])
 
   end
 
   def ensure_chef
     @chef = current_user
     redirect_to root_path unless @chef.is_chef?
-
   end
 
-  def user_params
-    params.require(:user).permit(photos: [])
-  end
+  # def user_params
+  #   params.require(:user).permit(photos: [])
+  # end
 end
