@@ -10,4 +10,9 @@
   <%= link_to 'Home', root_path %>
   |
   <%= link_to 'Chefs', users_path %>
+
+  <% unless @chef == current_user %>
+    <%= link_to "Book chef", new_user_booking_path(@chef) %>
+  <% end %>
+
 </div>

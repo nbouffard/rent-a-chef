@@ -9,6 +9,6 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :date_of_birth, :address, presence: true
 
   has_many :reviews
-  has_many :bookmarks
+  has_many :bookings
   has_many :messages
 end

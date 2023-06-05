@@ -21,6 +21,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def my_bookings
+    @bookings = current_user.bookings
+  end
+
   private
 
   def chef_params

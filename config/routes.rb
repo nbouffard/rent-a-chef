@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :users, only: %i[index show edit update] do
-    resources :booking, only: %i[new create edit update]
+    collection do
+      get :my_bookings
+    end
+    resources :bookings, only: %i[show new create edit update]
   end
 end
