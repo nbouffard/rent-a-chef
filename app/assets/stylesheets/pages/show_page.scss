@@ -21,4 +21,8 @@
     font-weight: lighter;
     padding: 8px;
     border-radius: 5px;
+    &:hover {
+      color: white;
+      background-color: #064420;
+    }
   }
