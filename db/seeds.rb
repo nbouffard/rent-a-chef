@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
-
+User.destroy_all
 5.times do
   @chef = User.create!(
     first_name: Faker::Name.first_name,
@@ -14,7 +14,9 @@ require 'faker'
     is_chef: true,
     address: Faker::Address.full_address,
     email: Faker::Internet.email,
-    password: Faker::Internet.password(min_length: 8),
-    date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65)
+    password: 123456,
+    date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65),
+    city: Faker::Address.city,
+    price: (rand 50..100)
   )
 end
