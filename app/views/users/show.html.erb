@@ -11,13 +11,13 @@
       <div class="info-flex">
         <p>Price <%= number_to_currency(@chef.price, precision: 0) %>/hr</p>
         <% if @chef == current_user %>
-          <%= link_to 'Edit profile',edit_user_path(@chef) %>
+          <%= link_to 'Edit profile',edit_user_path(@chef), class: 'link' %>
         <% else %>
-          <%= link_to "Book chef", new_user_booking_path(@chef) %>
+          <%= link_to "Book chef", new_user_booking_path(@chef), class: 'link' %>
         <% end %>
       </div>
     </div>
-    <div class="decription-flex">
+    <div class="decription-flex-container">
       <p><%= @chef.description %></p>
       <% @chef.photos.each do |photo| %>
         <%= cl_image_tag photo.key, height: 650, width: 450 %>
