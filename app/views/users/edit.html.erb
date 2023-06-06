@@ -1,35 +1,11 @@
-<%= form_with(model: @chef, url: user_path(@chef), method: :patch) do |form| %>
-
-  <div>
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div>
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div>
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div>
-    <%= form.label :date_of_birth %>
-    <%= form.date_field :date_of_birth %>
-  </div>
-
-  <div>
-  <%= form.label :price %>
-  <%= form.text_field :price %>
-  </div>
-
-
-  <%= form.submit 'Update Profile' %>
+<%= simple_form_for @chef do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :date_of_birth %>
+  <%= f.input :price %>
+  <%= f.input :profile_photo, as: :file %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.submit 'Update Profile' %>
 <% end %>
