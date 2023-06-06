@@ -15,16 +15,25 @@
             <% end %>
         <% end %>
       </div>
-    <div class="navbar-menu-icon">
-        <span><i class="fa-solid fa-bars fa-xl" style="color: #062c14;"></i></span>
-      </div>
+      <% if user_signed_in? %>
+        <div class="navbar-menu-icon">
+          <span><i class="fa-solid fa-bars fa-xl" style="color: #062c14;"></i></span>
+        </div>
+      <% end %>
     </div>
     <div class="navbar-bottom-container">
       <div class="navbar-logo">
         <%= image_tag "https://i.ibb.co/3YZD43H/rent-a-chef-logo.png", class: "navbar-logo" %>
       </div>
       <div class="navbar-button">
-        <button class="signup-button" onclick="window.location.href='<%= user_session_path %>'"><i class="fa-solid fa-lock fa-2xs" style="color: #f0f0f0;"></i> Sign In</button><button class="signup-button"><i class="fa-solid fa-user fa-2xs" style="color: #f0f0f0;"></i> Register</button>
+        <% if user_signed_in? %>
+          <%= form_tag destroy_user_session_path, method: :delete do %>
+            <%= submit_tag 'Log out', class: 'signup-button' %>
+          <% end %>
+        <% else %>
+          <button class="signup-button" onclick="window.location.href='<%= user_session_path %>'"><i class="fa-solid fa-lock fa-2xs" style="color: #f0f0f0;"></i> Sign In</button>
+          <button class="signup-button" onclick="window.location.href='<%= new_user_registration_path %>'"><i class="fa-solid fa-user fa-2xs" style="color: #f0f0f0;"></i> Register</button>
+        <% end %>
       </div>
     </div>
   </div>
