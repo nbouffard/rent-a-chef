@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many_attached :photos
   has_one_attached :profile_photo
 
-  validates :first_name, :last_name, :date_of_birth, :address, presence: true
+  validates :first_name, :last_name, :date_of_birth, :address, :city, presence: true
 
   has_many :reviews
   has_many :bookings

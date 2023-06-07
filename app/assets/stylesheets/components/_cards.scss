@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;800&display=swap');
+
 .card-price-city{
   border: 0.5px solid black;
   border-radius: 5px;
@@ -6,30 +8,43 @@
   background-color: #FDFAF6;
   text-align: left;
   font-size: 20px;
-  margin: 50px;
+  margin: 40px;
   padding: 5px;
   width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 h1{
-  font-family: ui sans-serif;
-  font-size:xx-large;
-  font-weight: bolder;
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  color: #064420;
+  font-weight: 700;
+  margin-left: 10px;
+  padding-top: 15px;
 }
 
 h2{
   text-decoration: solid;
 }
 
-.card-border{
+.card-border {
   display: flex;
   font-size: small;
   align-items: center;
   justify-content: space-between;
 }
 
+.card-border a {
+  font-size: 10px;
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+
+}
+
 .name-city{
   border-bottom: 0.5px solid black;
+  margin-bottom: 10px;
 }
 
 // .image{
@@ -41,30 +56,45 @@ h2{
 
 .card-price-city h2 {
   font-size: 20px;
-  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-bottom: 20px;
 }
 
 .card-price-city h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: 10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
 }
 
 .card-border h2 {
-  font-size: 24px;
+  font-size: 20px;
+  margin-left: 10px;
   font-weight: lighter;
 }
 
-.card-border h3 {
-  font-size: 18px;
-  font-weight: lighter;
-  color: black;
-  text-decoration: underline;
-  cursor: pointer;
-}
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+
+.card-price-city img {
+  display: block;
+  margin-bottom: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.card-price-city .name-city {
+  margin-top: 5px;
+  border-top: 0.5px solid black;
+  padding-top: 15px;
 }
 
 // Smallest device
