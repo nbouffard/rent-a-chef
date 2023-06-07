@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.chef = @chef
     if @booking.save!
-      redirect_to users_path
+      redirect_to my_bookings_bookings_path, notice: 'Booking request sent successfully'
     else
       render :new, status: :unprocessable_entity
     end
