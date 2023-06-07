@@ -21,7 +21,9 @@
     </div>
     <div class="navbar-bottom-container">
       <div class="navbar-logo">
-        <%= image_tag "https://i.ibb.co/3YZD43H/rent-a-chef-logo.png", class: "navbar-logo" %>
+        <%= link_to root_path do  %>
+          <%= image_tag "https://i.ibb.co/3YZD43H/rent-a-chef-logo.png", class: "navbar-logo" %>
+          <% end %>
       </div>
       <div class="navbar-button">
         <% if user_signed_in? %>
