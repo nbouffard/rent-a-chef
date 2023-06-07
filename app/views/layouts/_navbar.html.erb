@@ -16,8 +16,28 @@
         <% end %>
       </div>
         <div class="navbar-menu-icon">
-          <span><i class="fa-solid fa-bars fa-xl" style="color: #062c14;"></i></span>
+        <div class="dropdown">
+          <button class="dropdown-toggle" onclick="toggleDropdown()" aria-expanded="false">
+            <i class="fa-solid fa-bars fa-xl" style="color: #062c14;"></i>
+          </button>
+          <div class="dropdown-menu" id="navbar-dropdown">
+            <div class="dropdown-link-signed-in">
+            <% if user_signed_in? %>
+              <%= link_to "My Profile", user_path(current_user), class: "dropdown-link-style" %>
+            <% end %>
+            </div>
+            <div class="dropdown-link">
+              <%= link_to "Browse All Chefs", users_path, class: "dropdown-link-style" %>
+            </div>
+            <div class="dropdown-link">
+              <%= link_to "About Rent-A-Chef", "#", class: "dropdown-link-style" %>
+            </div>
+            <div class="dropdown-link">
+              <%= link_to "Contact Us", "#", class: "dropdown-link-style" %>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <div class="navbar-bottom-container">
       <div class="navbar-logo">
@@ -36,3 +56,19 @@
     </div>
   </div>
 </div>
+
+<%# dropdown menu script %>
+<script>
+  document.addEventListener('click', function(event) {
+    var dropdown = document.getElementById("navbar-dropdown");
+    var toggleButton = document.querySelector(".dropdown-toggle");
+    if (!dropdown.contains(event.target) && !toggleButton.contains(event.target)) {
+      dropdown.classList.remove("show");
+    }
+  });
+
+  function toggleDropdown() {
+    var dropdown = document.getElementById("navbar-dropdown");
+    dropdown.classList.toggle("show");
+  }
+</script>
