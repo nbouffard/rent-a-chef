@@ -21,6 +21,11 @@
                     end_year: Date.today.year,
                     required: true,
                     input_html: { autocomplete: "date of birth", class: "form-input-style"  }%>
+        <%= f.input :city,
+                   collection: ["New York", "Los Angeles", "London"],
+                   prompt: "Select City",
+                   required: true,
+                   input_html: { class: "form-input-style" } %>
         <%= f.input :is_chef, label: "I am a chef",
                     input_html: { autocomplete: "is a chef" }%>
         <%= f.input :email,
