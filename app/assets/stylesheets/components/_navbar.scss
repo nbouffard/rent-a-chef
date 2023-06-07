@@ -1,12 +1,133 @@
-.navbar-lewagon {
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;800&display=swap');
+
+.navbar {
+  padding: 0;
+  background-color: white;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  background: white;
+  background-color: white;
+  width: 1000px;
+  height: 100px;
+  padding: 0 5px;
+  padding-bottom: 5px;
+  margin: 0 auto;
+  position: relative;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-bottom-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 5px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-logo {
+  width: 200px;
+  margin-right: 10px;
+  margin-bottom: 4px;
 }
+
+.navbar-button {
+  margin-top: 10px;
+}
+
+.navbar-container .signup-button {
+  width: 150px;
+  height: 40px ;
+  background-color: #064420;
+  color: #f0f0f0;
+  border: 0.5px solid white !important;
+  padding: 0px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+.signup-button:hover {
+  background-color: #0a562a;
+  color: #f0f0f0;
+  border: 0.5px solid white !important;
+  transition-duration: 0.2s;
+}
+
+.arrow {
+  margin-left: 5px;
+}
+
+.navbar-notification-bell {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-notification-icon {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.navbar-notification-count {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(202, 72, 72);
+  color: white;
+  font-size: 12px;
+  padding: 1px 4px;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  right: 34px;
+  text-align: center;
+}
+
+.hide-notification {
+  display: none;
+}
+
+.navbar-icons-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  right: 0;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.navbar-icons-container > div {
+  margin-left: 10;
+}
+
+.navbar-menu-icon {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.fa-bell:hover {
+  color:#7b877e !important;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.fa-bars:hover {
+  color: #7b877e !important;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.fa-lock {
+  padding-right: 5px;
+}
+
+.fa-user {
+  padding-right: 5px;
+}
+
