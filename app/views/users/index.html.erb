@@ -7,7 +7,7 @@
           <% if chef.profile_photo.key.nil? %>
             <%= image_tag("https://images.unsplash.com/photo-1499715217757-2aa48ed7e593?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80", width: "100%", alt: 'Default chef profile picture') %>
           <% else %>
-            <%= cl_image_tag chef.profile_photo.key, height: 100 %>
+            <%= cl_image_tag chef.profile_photo.key, width: "100%", height: "200" %>
           <% end %>
           <div class="name-city">
             <h3><%= chef.city %></h3>
