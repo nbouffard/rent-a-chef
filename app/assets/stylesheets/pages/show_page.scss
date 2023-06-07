@@ -2,7 +2,7 @@
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 10px;
-  border-bottom: 1px solid #064420;
+  // border-bottom: 1px solid #064420;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,6 +11,7 @@
   }
   p {
     color: #064420;
+    font-size: 25px;
   }
 }
 
@@ -25,4 +26,17 @@
       color: white;
       background-color: #064420;
     }
+  }
+
+  .profile-img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit:cover;
+    object-position:center;
+  }
+
+  .show-img {
+    border-radius: 20px;
+    object-fit:cover;
+    object-position:center;
   }
