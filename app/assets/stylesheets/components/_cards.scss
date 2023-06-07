@@ -1,21 +1,23 @@
 .card-price-city{
   border: 0.5px solid black;
-  border-radius: px;
+  border-radius: 5px;
   padding: 12px;
   color: black;
   background-color: white;
   text-align: left;
   font-size: 20px;
   margin: 50px;
-
+  padding: 5px;
+  width: 100%;
+}
+h1{
+  font-family: ui sans-serif;
+  font-size:xx-large;
+  font-weight: bolder;
 }
 
 h2{
   text-decoration: solid;
-}
-
-h3{
-  font-size: 5px;
 }
 
 .card-border{
@@ -30,9 +32,9 @@ h3{
 }
 
 .image{
-  width: 165px;
+  width: 200px;
   height: 100px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .card-price-city h2 {
@@ -61,6 +63,7 @@ h3{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
+  background-color: #FDFAF6;
 }
 
 // Smallest device

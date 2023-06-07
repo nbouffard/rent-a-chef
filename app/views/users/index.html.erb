@@ -1,25 +1,25 @@
 <div class="container">
   <h1>All Chefs</h1>
-  <div class="cards">
    <% @chefs.each do |chef| %>
-  <% if chef.is_chef == true %>
-      <div class="card-price-city">
-        <% if chef.profile_photo.key.nil? %>
-          <%= image_tag("https://images.unsplash.com/photo-1499715217757-2aa48ed7e593?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80", width: "100%", alt: 'Default chef profile picture') %>
-        <% else %>
-          <%= cl_image_tag chef.profile_photo.key, height: 100 %>
-        <% end %>
-        <div class="name-city">
-          <h3><%= chef.city %></h3>
-          <h2><strong><%= "#{chef.first_name} #{chef.last_name}" %></strong></h2>
+      <div class="cards">
+        <% if chef.is_chef == true %>
+        <div class="card-price-city">
+          <% if chef.profile_photo.key.nil? %>
+            <%= image_tag("https://images.unsplash.com/photo-1499715217757-2aa48ed7e593?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80", width: "100%", alt: 'Default chef profile picture') %>
+          <% else %>
+            <%= cl_image_tag chef.profile_photo.key, height: 100 %>
+          <% end %>
+          <div class="name-city">
+            <h3><%= chef.city %></h3>
+            <h2><strong><%= "#{chef.first_name} #{chef.last_name}" %></strong></h2>
+          </div>
+          <div class="card-border">
+            <h2><%= chef.price.to_i%>€</h2>
+            <h3><%= link_to "View Details", user_path(chef) %></h3>
+          </div>
         </div>
-        <div class="card-border">
-          <h2><%= chef.price.to_i%>€</h2>
-          <h3><%= link_to "View Details", user_path(chef) %></h3>
-        </div>
+    <% end %>
       </div>
   <% end %>
-  <% end %>
-  </div>
 <%= link_to 'Home', root_path %>
 </div>
