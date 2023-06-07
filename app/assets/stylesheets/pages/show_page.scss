@@ -1,0 +1,42 @@
+.chef-name-inline {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  // border-bottom: 1px solid #064420;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h1{
+    color: #064420;
+  }
+  p {
+    color: #064420;
+    font-size: 25px;
+  }
+}
+
+.link {
+    border: 0.5px solid #064420;
+    text-decoration: none;
+    color: #064420;
+    font-weight: lighter;
+    padding: 8px;
+    border-radius: 5px;
+    &:hover {
+      color: white;
+      background-color: #064420;
+    }
+  }
+
+  .profile-img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit:cover;
+    object-position:center;
+  }
+
+  .show-img {
+    border-radius: 20px;
+    object-fit:cover;
+    object-position:center;
+  }

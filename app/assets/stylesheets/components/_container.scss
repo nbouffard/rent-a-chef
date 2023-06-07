@@ -1,0 +1,17 @@
+.content-container {
+  background-color: #FDFAF6;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.decription-flex-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  p {
+    border: 1px solid #064420;
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+}
