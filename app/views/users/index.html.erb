@@ -1,7 +1,7 @@
 <div class="container">
   <h1>All Chefs</h1>
-   <% @chefs.each do |chef| %>
       <div class="cards">
+   <% @chefs.each do |chef| %>
         <% if chef.is_chef == true %>
         <div class="card-price-city">
           <% if chef.profile_photo.key.nil? %>
@@ -15,11 +15,11 @@
           </div>
           <div class="card-border">
             <h2><%= chef.price.to_i%>€</h2>
-            <h3><%= link_to "View Details", user_path(chef) %></h3>
+            <%= link_to "View Details", user_path(chef) %>
           </div>
         </div>
     <% end %>
-      </div>
   <% end %>
+      </div>
 <%= link_to 'Home', root_path %>
 </div>

@@ -3,7 +3,7 @@
   border-radius: 5px;
   padding: 12px;
   color: black;
-  background-color: white;
+  background-color: #FDFAF6;
   text-align: left;
   font-size: 20px;
   margin: 50px;
@@ -31,11 +31,12 @@ h2{
   border-bottom: 0.5px solid black;
 }
 
-.image{
-  width: 200px;
-  height: 100px;
-  border-radius: 10px;
-}
+// .image{
+//   width: 200px;
+//   height: 100px;
+//   border-radius: 10px;
+// }
+
 
 .card-price-city h2 {
   font-size: 20px;
@@ -63,7 +64,6 @@ h2{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
-  background-color: #FDFAF6;
 }
 
 // Smallest device
