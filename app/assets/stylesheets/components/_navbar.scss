@@ -3,6 +3,8 @@
 
 .navbar {
   position: fixed;
+  background: rgb(255,255,255);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 0;
   top: 0;
   left: 0;
@@ -16,14 +18,9 @@
   justify-content: space-between;
   background: rgb(255,255,255);
   width: 1000px;
-  border-radius: 0 0 20px 20px;
   height: 100px;
-  padding-left: 25px;
-  padding-right: 25px;
   margin: 0 auto;
   position: relative;
-  border: 1px solid rgba(6, 68, 32, 0.2);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-bottom-container {
@@ -33,7 +30,6 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding-right: 35px;
   padding-bottom: 5px;
 }
 
@@ -146,7 +142,6 @@
   right: 0;
   margin-left: 10px;
   margin-top: 10px;
-  padding-right: 25px;
 }
 
 .navbar-icons-container > div {
