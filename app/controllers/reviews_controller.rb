@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     @review.chef = @chef
     if @review.save
-      redirect_to user_path(@chef), alert: 'Review Created.'
+      redirect_to user_path(@review.chef), alert: 'Review Created.'
     else
       render :new, status: :unproccessible_entity
     end

@@ -29,9 +29,11 @@
 
 <h2>User Reviews</h2>
 
-<% if @chef.reviews.any? %>
+<% if @chef.reviews_as_chef.any? %>
   <ul>
-    <% @chef.reviews.each do |review| %>
+    <% @chef.reviews_as_chef.each do |review| %>
+    <%= review.user.first_name %>
+    <%= review.user.last_name %>
       <li>
         <strong>Rating:</strong> <%= review.rating %>
         <br>

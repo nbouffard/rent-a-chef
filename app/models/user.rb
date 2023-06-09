@@ -12,4 +12,5 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :bookings
   has_many :messages
+  has_many :reviews_as_chef, class_name: "Review", foreign_key: :chef_id
 end
