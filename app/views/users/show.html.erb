@@ -32,11 +32,13 @@
 <% if @chef.reviews_as_chef.any? %>
   <ul>
     <% @chef.reviews_as_chef.each do |review| %>
-    <%= review.user.first_name %>
-    <%= review.user.last_name %>
+    <strong><%= review.user.first_name %>
+    <%= review.user.last_name %></strong>
       <li>
         <strong>Rating:</strong> <%= review.rating %>
         <br>
+        </li>
+        <li>
         <strong>Comment:</strong> <%= review.comment %>
       </li>
     <% end %>

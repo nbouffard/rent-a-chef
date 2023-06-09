@@ -9,10 +9,12 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user = current_user
     @review.chef = @chef
-    if @review.save
-      redirect_to user_path(@review.chef), alert: 'Review Created.'
+    if current_user == @chef
+      redirect_to user_path(@chef), alert: 'You cannot review your own profile.'
+    elsif @review.save
+      redirect_to user_path(@chef), notice: 'Review Created.'
     else
-      render :new, status: :unproccessible_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
