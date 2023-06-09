@@ -1,23 +1,25 @@
 class ReviewsController < ApplicationController
-  before_action :set_user, only: %i[new create]
+  before_action :set_chef, only: %i[new create]
 
   def new
-    @review = @user.reviews.new
+    @review = Review.new
   end
 
   def create
-    @review = @user.reviews.build(review_params)
+    @review = Review.new(review_params)
+    @review.user = current_user
+    @review.chef = @chef
     if @review.save
-      redirect_to @user, alert: 'Review Created.'
+      redirect_to user_path(@chef), alert: 'Review Created.'
     else
-      render :new
+      render :new, status: :unproccessible_entity
     end
   end
 
   private
 
-  def set_user
-    @user = User.find(params[:user_id])
+  def set_chef
+    @chef = User.find(params[:user_id])
   end
 
   def review_params

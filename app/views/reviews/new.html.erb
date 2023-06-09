@@ -1,0 +1,6 @@
+<h1>User Reviews</h1>
+<%= simple_form_for([@chef, @review]) do |form| %>
+  <%= form.input :rating, as: :integer, input_html: { min: 1, max: 5 } %>
+  <%= form.input :comment, as: :text %>
+  <%= form.button :submit %>
+<% end %>
