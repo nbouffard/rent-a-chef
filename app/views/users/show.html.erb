@@ -8,7 +8,11 @@
       <h1><%= @chef.first_name.capitalize %> <%= @chef.last_name.capitalize %></h1>
       <div class="info-flex">
         <p>Price <%= number_to_currency(@chef.price, precision: 0) %>/hr</p>
-        <div class="card-price-city <%= @chef.profile_photo.key.nil? ? 'default-bg' : 'profile-bg' %>">
+        <% if @chef == current_user %>
+          <%= link_to 'Edit profile',edit_user_path(@chef), class: 'link' %>
+        <% else %>
+          <%= link_to "Book chef", new_user_booking_path(@chef), class: 'link' %>
+        <% end %>
         </div>
       </div>
     </div>
