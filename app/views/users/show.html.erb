@@ -13,7 +13,6 @@
         <% else %>
           <%= link_to "Book chef", new_user_booking_path(@chef), class: 'link' %>
         <% end %>
-        </div>
       </div>
     </div>
     <div class="decription-flex-container">
@@ -23,5 +22,7 @@
     <% else %>
       <%= cl_image_tag @chef.profile_photo.key, height: 650, width: 450, class: 'show-img'  %>
     <% end %>
+
+    </div>
   </div>
 </div>
