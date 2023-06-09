@@ -3,13 +3,13 @@
       <div class="homepage-text-container">
       <h1>Find a chef to cook for you wherever, whenever.</h1>
       <div class="homepage-form-container">
-    <%= form_with url: users_path, method: :get, class: "d-flex" do %>
+    <%= form_with url: users_path, method: :get, class: "d-flex search-field" do %>
       <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Chef, Cuisine, or City."
+            placeholder: "What are you looking for?"
         %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <%= submit_tag "Search", name: "", class: "search-button" %>
     <% end %>
   </div>
 </div>
