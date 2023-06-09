@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     @markers = @chefs.geocoded.map do |chef|
       {
         lat: chef.latitude,
-        lng: chef.longitude
+        lng: chef.longitude,
+        info_window_html: render_to_string(partial: 'info_window', locals: { chef: chef })
       }
     end
   end
