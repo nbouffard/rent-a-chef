@@ -4,14 +4,15 @@
         <% @chefs.each do |chef| %>
           <% if chef.is_chef == true %>
            <a href="<%= user_path(chef) %>" class="card-link">
-            <div class="card-price-city <%= @chef.present? && @chef.profile_photo.key.present? ? 'profile-bg' : 'default-bg' %>">
-              <div class="name-city">
-                <h2><strong><%= "#{chef.first_name} #{chef.last_name}" %></strong></h2>
-                <h3><%= chef.city %></h3>
+            <% if chef.profile_photo.key.nil? %>
+              <div class="card-price-city default-bg ">
+                <%= render 'card_details', chef: chef %>
+            <% else %>
+              <div class="card-price-city profile-bg "
+                  style="background-image: url('<%= cl_image_path chef.profile_photo.key %>')">
+                <%= render 'card_details', chef: chef %>
               </div>
-              <div class="card-border">
-                <h2><%= number_to_currency(chef.price.to_i, precision: 0) %>/hr</h2>
-              </div>
+            <% end %>
             </div>
            </a>
           <% end %>
