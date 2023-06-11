@@ -1,13 +1,19 @@
-<%= simple_form_for @chef do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :description %>
-    <%= f.input :cuisine %>
-  <%= f.input :address %>
-  <%= f.input :city %>
-  <%= f.input :date_of_birth %>
-  <%= f.input :price %>
-  <%= f.input :profile_photo, as: :file %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit 'Update Profile' %>
-<% end %>
+<div class="form">
+  <div class="form-container">
+    <h2>Edit Profile</h2>
+    <%= simple_form_for @chef do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :description %>
+      <%= f.input :cuisine %>
+      <%= f.input :address %>
+      <%= f.input :city %>
+      <%= f.input :date_of_birth %>
+      <%= f.input :price %>
+      <%= f.input :profile_photo, as: :file %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.submit 'Update Profile' %>
+    <% end %>
+  </div>
+</div>
+
