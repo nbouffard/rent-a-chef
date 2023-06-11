@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;800&display=swap');
 
 .cards-container {
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -16,6 +17,7 @@
   background-color: #FDFAF6;
   border: 1px solid rgba($color: #064420, $alpha: 0.2);
   margin-top: 10px;
+
 }
 
 .card-price-city{
@@ -57,6 +59,7 @@ a {
 }
 
 h1{
+  margin-top: 20px;
   font-size: 30px;
   font-family: 'Montserrat', sans-serif;
   color: #064420;
