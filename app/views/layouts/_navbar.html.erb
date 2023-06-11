@@ -21,11 +21,11 @@
             <i class="fa-solid fa-bars fa-xl" style="color: #062c14;"></i>
           </button>
           <div class="dropdown-menu" id="navbar-dropdown">
-            <div class="dropdown-link-signed-in">
             <% if user_signed_in? %>
-              <%= link_to "My Profile", user_path(current_user), class: "dropdown-link-signed-in" %>
-            <% end %>
+            <div class="dropdown-link-signed-in">
+              <%= link_to "My Profile", user_path(current_user), class: "dropdown-link-style" %>
             </div>
+            <% end %>
             <div class="dropdown-link">
               <%= link_to "Browse All Chefs", users_path, class: "dropdown-link-style" %>
             </div>
@@ -51,7 +51,7 @@
             <%= submit_tag 'Log out', class: 'signup-button' %>
           <% end %>
         <% else %>
-          <button class="signup-button" onclick="window.location.href='<%= user_session_path %>'"><i class="fa-solid fa-lock fa-2xs" style="color: #f0f0f0;"></i> Sign In</button>
+          <button class="signin-button" onclick="window.location.href='<%= user_session_path %>'"><i class="fa-solid fa-lock fa-2xs" style="color: #0a562a;"></i> Sign In</button>
           <button class="signup-button" onclick="window.location.href='<%= new_user_registration_path %>'"><i class="fa-solid fa-user fa-2xs" style="color: #f0f0f0;"></i> Register</button>
         <% end %>
       </div>
