@@ -5,19 +5,16 @@
           <h1>Find a chef to cook for you wherever, whenever.</h1>
         </div>
       <div class="homepage-form-container">
-        <%= simple_form_for("/search", method: "get") do |f| %>
-          <div class="search-input-container">
-            <%= f.input :query, label: "", input_html: { placeholder: "What are you looking for?", class: "search-field" }, required: false, label_html: { class: "hidden-label" } %>
-            <%= f.button :submit, "Search", class: "search-button" %>
-          </div>
-          <div class="search-filter-container">
-              <%= f.input :cuisine, collection: ["Italian", "Mexican", "Japanese"], include_blank: "Cuisine", label: "", required: false, label_html: { class: "hidden-label" } %>
-              <%= f.input :location, collection: ["New York", "Los Angeles", "London"], prompt: "Location", label: "", required: false, label_html: { class: "hidden-label" } %>
-              <%= f.input :price_range, collection: ["€ - Affordable", "€€ - Moderate", "€€€ - Expensive"], prompt: "Price Range", label: "", required: false, label_html: { class: "hidden-label" } %>
-          <% end %>
-        </div>
-      </div>
-      </div>
+    <%= form_with url: users_path, method: :get, class: "d-flex search-field" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "What are you looking for?"
+        %>
+      <%= submit_tag "Search", name: "", class: "search-button" %>
+    <% end %>
+  </div>
+</div>
       <div class="homepage-image-container">
         <img src="https://source.unsplash.com/random/?cooking" alt="Chef Image" class="homepage-image line">
       </div>

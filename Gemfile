@@ -37,6 +37,10 @@ gem "cloudinary"
 
 gem "bootstrap"
 
+gem "geocoder"
+
+gem 'pg_search'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
