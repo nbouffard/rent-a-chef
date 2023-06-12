@@ -34,11 +34,12 @@
   display: flex;
   justify-content: space-between;
   p {
-    border: 1px solid #064420;
+    // border: 1px solid #064420;
     margin-right: 20px;
-    padding: 20px;
-    border-radius: 20px;
+    padding: 5px;
+    // border-radius: 20px;
     overflow: auto;
     max-height: 450px;
+
   }
 }
