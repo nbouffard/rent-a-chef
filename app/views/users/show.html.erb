@@ -27,3 +27,25 @@
         </div>
     </div>
 </div>
+
+<% if params[:id].to_i != current_user.id %>
+<%= link_to "Add Review", new_user_review_path(@chef) %>
+<% end %>
+<h2>User Reviews</h2>
+<% if @chef.reviews_as_chef.any? %>
+  <ul>
+    <% @chef.reviews_as_chef.each do |review| %>
+    <strong><%= review.user.first_name %>
+    <%= review.user.last_name %></strong>
+      <li>
+        <strong>Rating:</strong> <%= review.rating %>
+        <br>
+        </li>
+        <li>
+        <strong>Comment:</strong> <%= review.comment %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No reviews available.</p>
+<% end %>
