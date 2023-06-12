@@ -17,14 +17,13 @@
             <% end %>
           </div>
         </div>
-        <div class="description-flex-container">
+        <div class="decription-flex-container">
           <p><%= @chef.description %></p>
           <% if @chef.profile_photo.key.nil? %>
-          <%= image_tag("https://i.ibb.co/NLGFp5g/rent-default.jpg", size: '750x500', alt: 'Default chef profile picture', class: 'show-img') %>
+          <%= image_tag("https://images.unsplash.com/photo-1499715217757-2aa48ed7e593?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80", size: '750x500', alt: 'Default chef profile picture', class: 'show-img') %>
         <% else %>
-      <%= cl_image_tag @chef.profile_photo.key, height: 650, width: 450, class: 'show-img'  %>
-    <% end %>
+          <%= cl_image_tag @chef.profile_photo.key, height: 650, width: 450, class: 'show-img'  %>
+        <% end %>
         </div>
     </div>
-  </div>
 </div>
