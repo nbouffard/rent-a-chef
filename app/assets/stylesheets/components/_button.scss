@@ -16,3 +16,17 @@
     color: white;
   }
 }
+
+.search-button {
+  margin-left: 20px;
+  background-color: #064420;
+  border-radius: 20px;
+  color: #f0f0f0;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  &:hover {
+    background-color: #0a562a;
+    color: #f0f0f0;
+    transition-duration: 0.2s;
+  }
+}
