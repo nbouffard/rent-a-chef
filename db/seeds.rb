@@ -6,9 +6,13 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
+require 'open-uri'
+require 'json'
+
 User.destroy_all
-5.times do
-  @chef = User.create!(
+12.times do
+  file = URI.open('https://i.pravatar.cc/300')
+  @chef = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     is_chef: true,
@@ -19,4 +23,6 @@ User.destroy_all
     city: Faker::Address.city,
     price: (rand 50..100)
   )
+  @chef.profile_photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  @chef.save!
 end
