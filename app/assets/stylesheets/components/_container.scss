@@ -4,8 +4,8 @@
   border-radius: 20px;
   align-items: center;
   width: 1000px;
-  padding: 0 5px;
-  padding-bottom: 5px;
+  // padding
+  // padding-bottom: 5px;
   margin: 0 auto;
   position: relative;
 }
@@ -23,19 +23,21 @@
   justify-content: flex-start;
 }
 
-.decription-flex-container {
+.description-flex-container {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
   p {
-    border: 1px solid #064420;
+    margin-bottom: 0;
     margin-right: 20px;
-    padding: 20px;
-    border-radius: 20px;
+    // padding: 20px;
+    // border-radius: 20px;
+    height: 400px;
+    overflow: auto;
   }
 }
 
-.decription-flex-container-no-border {
+.description-flex-container-no-border {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;

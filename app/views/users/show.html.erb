@@ -2,21 +2,22 @@
   <div class="button-container">
     <%= link_to '← Back', users_path, class: 'btn-grey' %>
   </div>
-      <div class="content-container">
-        <% @chef.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height: 400, class: 'profile-img'  %>
-          <% end %>
-        <div class="chef-name-inline">
-          <h1><%= @chef.first_name.capitalize %> <%= @chef.last_name.capitalize %></h1>
-          <div class="info-flex">
-            <p>Price <%= number_to_currency(@chef.price, precision: 0) %>/hr</p>
-            <% if @chef == current_user %>
-              <%= link_to 'Edit profile',edit_user_path(@chef), class: 'link' %>
-            <% else %>
-              <%= link_to "Book chef", new_user_booking_path(@chef), class: 'link' %>
-            <% end %>
+  <div class="content-container">
+    <% @chef.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 200, class: 'profile-img'  %>
+      <% end %>
+    <div class="chef-name-inline">
+      <h1><%= @chef.first_name.capitalize %> <%= @chef.last_name.capitalize %></h1>
+      <div class="info-flex">
+        <p>Price <%= number_to_currency(@chef.price, precision: 0) %>/hr</p>
+        <% if @chef == current_user %>
+          <%= link_to 'Edit profile',edit_user_path(@chef), class: 'link' %>
+        <% else %>
+          <%= link_to "Book chef", new_user_booking_path(@chef), class: 'link' %>
+        <% end %>
       </div>
-    </div>
+    <%# </div> %>
+  </div>
     <% if @chef.description.nil? || @chef.description == "" %>
       <div class="description-flex-container-no-border">
       <p>No description added yet...</p>
@@ -24,7 +25,7 @@
     <div class="description-flex-container">
     <div class="description-map">
       <p><%= @chef.description %></p>
-      <div style="width: 95%; height: 400px;"
+      <div style="width: 95%; height: 250px;"
             data-controller="map"
             data-map-marker-value="<%= @marker.to_json %>"
             data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
@@ -39,7 +40,6 @@
     <% end %>
     </div>
 </div>
-
 <% if params[:id].to_i != current_user.id %>
 <%= link_to "Add Review", new_user_review_path(@chef) %>
 <% end %>
