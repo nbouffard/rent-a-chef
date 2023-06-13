@@ -5,7 +5,10 @@
         <%= cl_image_tag photo.key, height: 400, class: 'profile-img'  %>
       <% end %>
     <div class="chef-name-inline">
-      <h1><%= @chef.first_name.capitalize %> <%= @chef.last_name.capitalize %></h1>
+      <div class="name-flex">
+        <h1><%= @chef.first_name.capitalize %> <%= @chef.last_name.capitalize %></h1>
+        <p><i class="fa-solid fa-location-dot"></i> <%= @chef.city %></p>
+      </div>
       <div class="info-flex">
         <p>Price <%= number_to_currency(@chef.price, precision: 0) %>/hr</p>
         <% if @chef == current_user %>
@@ -19,10 +22,10 @@
     <div class="descroption-map">
       <p><%= @chef.description %></p>
       <div style="width: 95%; height: 400px;"
-              data-controller="map"
-              data-map-marker-value="<%= @marker.to_json %>"
-              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-              class="map">
+            data-controller="map"
+            data-map-marker-value="<%= @marker.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+            class="map">
       </div>
       </div>
       <% if @chef.profile_photo.key.nil? %>

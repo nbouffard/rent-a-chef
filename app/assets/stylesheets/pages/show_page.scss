@@ -40,3 +40,14 @@
     object-fit:cover;
     object-position:center;
   }
+
+  .name-flex {
+    display: flex;
+    flex-direction: column;
+    h1 {
+      margin-left: 0;
+    }
+    p {
+      opacity: 0.8;
+    }
+  }
