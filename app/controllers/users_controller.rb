@@ -4,17 +4,22 @@ class UsersController < ApplicationController
 
   def index
     @chefs = User.all
-    @markers = @chefs.geocoded.map do |chef|
-      {
-        lat: chef.latitude,
-        lng: chef.longitude,
-        info_window_html: render_to_string(partial: 'info_window', locals: { chef: chef })
-      }
-    end
+    # @markers = @chefs.geocoded.map do |chef|
+    #   {
+    #     lat: chef.latitude,
+    #     lng: chef.longitude,
+    #     info_window_html: render_to_string(partial: 'info_window', locals: { chef: chef })
+    #   }
+    # end
   end
 
   def show
     @chef = User.find(params[:id])
+    @marker = {
+      lat: @chef.latitude,
+      lng: @chef.longitude,
+      info_window_html: render_to_string(partial: 'info_window', locals: { chef: @chef })
+    }
   end
 
   def edit
