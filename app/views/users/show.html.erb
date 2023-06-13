@@ -7,7 +7,10 @@
         <%= cl_image_tag photo.key, height: 400, class: 'profile-img'  %>
       <% end %>
     <div class="chef-name-inline">
+    <div class="name-flex">
       <h1><%= @chef.first_name.capitalize %> <%= @chef.last_name.capitalize %></h1>
+      <p><i class="fa-solid fa-location-dot"></i> <%= @chef.city %></p>
+    </div>
       <div class="info-flex">
         <p>Price <%= number_to_currency(@chef.price, precision: 0) %>/hr</p>
         <% if @chef == current_user %>
@@ -19,13 +22,29 @@
     </div>
   <% if @chef.description.nil? || @chef.description == "" %>
     <div class="description-flex-container-no-border">
-    <p>No description added yet...</p>
+      <div class="description-map">
+      <p>No description added yet...</p>
+      <div style="width: 95%; height: 250px;"
+              data-controller="map"
+              data-map-marker-value="<%= @marker.to_json %>"
+              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+              class="map">
+      </div>
+    </div>
   <% else %>
   <div class="description-flex-container">
+  <div class="description-map">
     <p><%= @chef.description %></p>
+    <div style="width: 95%; height: 250px;"
+          data-controller="map"
+          data-map-marker-value="<%= @marker.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+          class="map">
+    </div>
+  </div>
   <% end %>
     <% if @chef.profile_photo.key.nil? %>
-    <%= image_tag("https://images.unsplash.com/photo-1499715217757-2aa48ed7e593?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80", size: '750x500', alt: 'Default chef profile picture', class: 'show-img') %>
+    <%= image_tag("https://i.ibb.co/NLGFp5g/rent-default.jpg", size: '650x450', alt: 'Default chef profile picture', class: 'show-img') %>
     <% else %>
       <%= cl_image_tag @chef.profile_photo.key, height: 650, width: 450, class: 'show-img'  %>
     <% end %>
