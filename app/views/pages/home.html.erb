@@ -1,7 +1,9 @@
 <div class="homepage">
     <div class="homepage-container">
       <div class="homepage-text-container">
-      <h1>Find a chef to cook for you wherever, whenever.</h1>
+        <div class="typewriter">
+          <h1>Find a chef to cook for you wherever, whenever.</h1>
+        </div>
       <div class="homepage-form-container">
     <%= form_with url: users_path, method: :get, class: "d-flex search-field" do %>
       <%= text_field_tag :query,
@@ -14,7 +16,10 @@
   </div>
 </div>
       <div class="homepage-image-container">
-        <img src="https://images.unsplash.com/photo-1581349485608-9469926a8e5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" alt="Chef Image" class="homepage-image">
+        <img src="https://source.unsplash.com/random/?cooking" alt="Chef Image" class="homepage-image line">
       </div>
+      <%# <div class="new-chefs-container">
+        <h4>Discover the newest chefs</h4>
+      </div> %>
     </div>
 </div>
