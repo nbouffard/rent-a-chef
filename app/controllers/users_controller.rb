@@ -4,13 +4,14 @@ class UsersController < ApplicationController
 
   def index
     @chefs = User.all
-    # @markers = @chefs.geocoded.map do |chef|
-    #   {
-    #     lat: chef.latitude,
-    #     lng: chef.longitude,
-    #     info_window_html: render_to_string(partial: 'info_window', locals: { chef: chef })
-    #   }
-    # end
+    if params[:query].present?
+      @chefs = User.search(params[:query])
+      if @chefs.empty?
+        flash.now[:notice] = "No chefs found"
+      end
+    else
+      @chefs = User.all
+    end
   end
 
   def show
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
 
   def chef_params
     params.require(:user).permit(:first_name, :last_name, :description, :address, :date_of_birth, :city,
-                                 :profile_photo, :price, photos: [])
+                                 :profile_photo, :price, :cuisine, photos: [])
   end
 
   def ensure_chef

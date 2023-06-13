@@ -1,25 +1,21 @@
-<div class="container">
-  <h1>All Chefs</h1>
-
+<div class="cards-container">
+  <h1>Our Chefs</h1>
       <div class="cards">
-   <% @chefs.each do |chef| %>
-        <% if chef.is_chef == true %>
-        <div class="card-price-city">
-          <% if chef.profile_photo.key.nil? %>
-            <%= image_tag("https://images.unsplash.com/photo-1499715217757-2aa48ed7e593?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80", width: "100%", height: "200", alt: 'Default chef profile picture') %>
-          <% else %>
-            <%= cl_image_tag chef.profile_photo.key, width: "100%", height: "200" %>
+        <% @chefs.each do |chef| %>
+          <% if chef.is_chef == true %>
+           <a href="<%= user_path(chef) %>" class="card-link">
+            <% if chef.profile_photo.key.nil? %>
+              <div class="card-price-city default-bg ">
+                <%= render 'card_details', chef: chef %>
+            <% else %>
+              <div class="card-price-city profile-bg "
+                  style="background-image: url('<%= cl_image_path chef.profile_photo.key %>')">
+                <%= render 'card_details', chef: chef %>
+              </div>
+            <% end %>
+            </div>
+           </a>
           <% end %>
-          <div class="name-city">
-            <h3><%= chef.city %></h3>
-            <h2><strong><%= "#{chef.first_name} #{chef.last_name}" %></strong></h2>
-          </div>
-          <div class="card-border">
-            <h2><%= number_to_currency(chef.price.to_i, precision: 0) %>/hr</h2>
-            <%= link_to "View Details", user_path(chef) %>
-          </div>
-        </div>
-    <% end %>
-  <% end %>
+        <% end %>
       </div>
 </div>

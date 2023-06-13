@@ -77,8 +77,6 @@
 }
 
 .search-field {
-  flex: 1;
-  width: 350px;
   margin-right: 10px;
   border-radius: 20px;
   color: #b6b6b6;
@@ -86,9 +84,8 @@
 }
 
 .search-button {
-  margin-left: 5px;
+  margin-left: 20px;
   background-color: #064420;
-  margin-top: -16px;
   border-radius: 20px;
   color: #f0f0f0;
   font-family: 'Montserrat', sans-serif;

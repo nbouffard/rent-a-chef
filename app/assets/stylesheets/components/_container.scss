@@ -2,6 +2,25 @@
   background-color: #FDFAF6;
   padding: 20px;
   border-radius: 20px;
+  align-items: center;
+  width: 1000px;
+  padding: 0 5px;
+  padding-bottom: 5px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.container-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .decription-flex-container {
@@ -10,6 +29,17 @@
   justify-content: space-between;
   p {
     border: 1px solid #064420;
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+}
+
+.decription-flex-container-no-border {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  p {
     margin-right: 20px;
     padding: 20px;
     border-radius: 20px;
