@@ -15,7 +15,7 @@
 .homepage-image-container {
   flex: 0 0 50%;
   padding: 20px;
-  text-align: center;
+  // text-align: center;
   align-items: flex-start;
   position: relative;
 }
@@ -141,7 +141,7 @@
   overflow: hidden;
   border-right: .10em solid rgb(0, 0, 0);
   white-space: nowrap;
-  margin: 0 auto;
+  // margin: 0 auto;
   animation:
     typing 3.5s steps(40, end),
     blink-caret .75s step-end infinite;
