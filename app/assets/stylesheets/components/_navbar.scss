@@ -2,19 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;800&display=swap');
 
 .navbar {
+  position: fixed;
+  background: rgb(255,255,255);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 0;
-  background-color: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
 }
 
 .navbar-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
+  background: rgb(255,255,255);
   width: 1000px;
   height: 100px;
-  padding: 0 5px;
-  padding-bottom: 5px;
   margin: 0 auto;
   position: relative;
 }
@@ -31,6 +35,7 @@
 
 .navbar-logo {
   width: 200px;
+  max-width: 200px;
   margin-right: 10px;
   margin-bottom: 4px;
 }
@@ -80,6 +85,23 @@
   transition-duration: 0.2s;
 }
 
+.navbar-container .signout-button {
+  width: 150px;
+  height: 50px;
+  background-color: white;
+  border: 0.5px solid white !important;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 22px;
+  text-align: center;
+}
+
+.signout-button:hover {
+  color: #7b877e;
+  border: 0.5px solid white !important;
+  transition-duration: 0.2s;
+}
+
 .arrow {
   margin-left: 5px;
 }
@@ -119,7 +141,7 @@
   top: 0;
   right: 0;
   margin-left: 10px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .navbar-icons-container > div {
