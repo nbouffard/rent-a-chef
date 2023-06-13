@@ -7,13 +7,13 @@
             <% if chef.profile_photo.key.nil? %>
               <div class="card-price-city default-bg ">
                 <%= render 'card_details', chef: chef %>
+              </div>
             <% else %>
               <div class="card-price-city profile-bg "
                   style="background-image: url('<%= cl_image_path chef.profile_photo.key %>')">
                 <%= render 'card_details', chef: chef %>
               </div>
             <% end %>
-            </div>
            </a>
           <% end %>
         <% end %>
