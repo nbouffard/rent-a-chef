@@ -1,8 +1,15 @@
-<h1>User Reviews</h1>
-<%= simple_form_for([@chef, @review]) do |form| %>
-  <%= form.input :rating, as: :integer, input_html: { min: 1, max: 5 } %>
-  <%= form.input :comment, as: :text %>
-  <%= form.button :submit %>
-<% end %>
-
-<%= link_to 'Back', user_path(@chef), class: 'btn btn-primary' %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12.col-sm-4 col-sm-offset-4">
+      <div class="form-review">
+        <h1>User Reviews</h1>
+          <%= simple_form_for([@chef, @review]) do |form| %>
+          <%= form.input :rating, as: :integer, input_html: { min: 1, max: 5 } %>
+          <%= form.input :comment, as: :text %>
+          <%= form.button :submit %>
+        <% end %>
+        <%= link_to 'Back', user_path(@chef), class:'signup-button' %>
+      </div>
+    </div>
+  </div>
+</div>
