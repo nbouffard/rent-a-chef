@@ -16,7 +16,15 @@
       </div>
     </div>
     <div class="decription-flex-container">
+    <div class="descroption-map">
       <p><%= @chef.description %></p>
+      <div style="width: 95%; height: 400px;"
+              data-controller="map"
+              data-map-marker-value="<%= @marker.to_json %>"
+              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+              class="map">
+      </div>
+      </div>
       <% if @chef.profile_photo.key.nil? %>
       <%= image_tag("https://images.unsplash.com/photo-1499715217757-2aa48ed7e593?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80", size: '750x500', alt: 'Default chef profile picture', class: 'show-img') %>
     <% else %>
@@ -26,9 +34,3 @@
     </div>
   </div>
 </div>
-<%= @marker.to_json %>
-<div style="width: 100%; height: 400px;"
-        data-controller="map"
-        data-map-marker-value="<%= @marker.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
