@@ -18,7 +18,8 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :date_of_birth, :address, :city, presence: true
 
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :bookings
   has_many :messages
+  has_many :reviews_as_chef, class_name: "Review", foreign_key: :chef_id
 end
