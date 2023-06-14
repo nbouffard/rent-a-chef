@@ -21,5 +21,8 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :bookings
   has_many :messages
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   has_many :reviews_as_chef, class_name: "Review", foreign_key: :chef_id
 end

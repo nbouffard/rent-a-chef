@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :ensure_chef, only: %i[edit update]
 
   def index
+    @chefs = User.all
     if params[:query].present?
       @chefs = User.search(params[:query])
       if @chefs.empty?
@@ -13,10 +14,13 @@ class UsersController < ApplicationController
     end
   end
 
-
-
   def show
     @chef = User.find(params[:id])
+    @marker = {
+      lat: @chef.latitude,
+      lng: @chef.longitude,
+      info_window_html: render_to_string(partial: 'info_window', locals: { chef: @chef })
+    }
   end
 
   def edit

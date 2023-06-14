@@ -23,6 +23,9 @@
 }
 .footer-copyright {
   font-family: 'Montserrat', sans-serif;
+  p {
+    margin: 0;
+  }
 }
 .footer-links {
   display: flex;

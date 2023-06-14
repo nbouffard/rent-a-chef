@@ -1,6 +1,6 @@
 <div class="name-city">
   <h2><strong><%= "#{chef.first_name} #{chef.last_name}" %></strong></h2>
-  <h3><%= chef.city %></h3>
+  <h3><i class="fa-solid fa-location-dot"></i> <%= chef.city %></h3>
 </div>
 <div class="card-border">
   <h2><%= number_to_currency(chef.price.to_i, precision: 0) %>/hr</h2>

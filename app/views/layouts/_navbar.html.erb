@@ -50,9 +50,10 @@
       </div>
       <div class="navbar-button">
         <% if user_signed_in? %>
-          <%= form_tag destroy_user_session_path, method: :delete do %>
-            <%= submit_tag 'Log out', class: 'signup-button' %>
-          <% end %>
+        <%= button_to destroy_user_session_path, method: :delete, class: 'signin-button', id: 'signout-button' do %>
+          <i class="fa-solid fa-right-from-bracket fa-xl" style="color: #0a562a;"></i>
+          <span class="button-text">Sign Out</span>
+        <% end %>
         <% else %>
           <button class="signin-button" onclick="window.location.href='<%= user_session_path %>'"><i class="fa-solid fa-lock fa-2xs" style="color: #0a562a;"></i> Sign In</button>
           <button class="signup-button" onclick="window.location.href='<%= new_user_registration_path %>'"><i class="fa-solid fa-user fa-2xs" style="color: #f0f0f0;"></i> Register</button>
