@@ -19,6 +19,9 @@
   border: 1px solid rgba($color: #064420, $alpha: 0.2);
   background-color: #FDFAF6;
   font-family: 'Montserrat', sans-serif;
+  h1 {
+    text-decoration: underline;
+  }
 }
 
 .form h2 {
