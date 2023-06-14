@@ -1,8 +1,13 @@
-<div class="container">
-  <%= simple_form_for [@chef, @booking]  do |f| %>
-    <%= f.input :date,
+<div class="form">
+  <div class="form-container">
+    <h1>New Booking</h1>
+    <%= simple_form_for [@chef, @booking] do |f| %>
+      <%= f.input :date,
         start_year: Date.today.year,
         end_year: Date.today.year + 1 %>
-    <%= f.submit %>
-  <% end %>
+      <div class="form-actions">
+        <%= f.button :submit, "Create Booking", class: "submit-button" %>
+      </div>
+    <% end %>
+  </div>
 </div>

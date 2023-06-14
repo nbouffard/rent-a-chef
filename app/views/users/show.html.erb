@@ -50,11 +50,12 @@
     <% end %>
   </div>
   <hr>
-  <div class="reviews">
-  <% if params[:id].to_i != current_user.id %>
-    <%= link_to "+Add Review", new_user_review_path(@chef), class: 'btn-green' %>
+  <% if current_user %>
+    <% if params[:id].to_i != current_user.id %>
+      <%= link_to "Add Review", new_user_review_path(@chef) %>
     <% end %>
-  <h2 class="text-underline">User Reviews</h2>
+  <% end %>
+  <h2>User Reviews</h2>
     <% if @chef.reviews_as_chef.any? %>
       <% @chef.reviews_as_chef.each do |review| %>
         <p><strong>-</strong> <%= "#{review.user.first_name[0].capitalize} #{review.user.last_name.capitalize} (#{review.created_at.strftime("%d %B %Y, %l:%M%P")})" %></p>
