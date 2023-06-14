@@ -4,7 +4,7 @@
     <%= simple_form_for([@chef, @review]) do |form| %>
       <%= form.input :rating, as: :integer, input_html: { min: 1, max: 5 } %>
       <%= form.input :comment, as: :text %>
-      <%= form.button :submit %>
+      <%= form.submit 'Submit', class: "btn-green" %>
     <% end %>
 
     <%= link_to 'Back', user_path(@chef), class: 'btn btn-primary' %>
