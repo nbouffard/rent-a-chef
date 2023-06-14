@@ -22,10 +22,13 @@
           </button>
           <div class="dropdown-menu" id="navbar-dropdown">
             <% if user_signed_in? %>
-            <div class="dropdown-link-signed-in">
-              <%= link_to "My Profile", user_path(current_user), class: "dropdown-link-style" %>
-            </div>
-            <% end %>
+              <div class="dropdown-link-signed-in">
+                <%= link_to "My Profile", user_path(current_user), class: "dropdown-link-style" %>
+              </div>
+              <div class="dropdown-link-signed-in">
+                <%= link_to "My Bookings", my_bookings_bookings_path, class: "dropdown-link-style" %>
+              </div>
+              <% end %>
             <div class="dropdown-link">
               <%= link_to "Browse All Chefs", users_path, class: "dropdown-link-style" %>
             </div>

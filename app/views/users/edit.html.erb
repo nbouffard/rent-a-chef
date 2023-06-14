@@ -1,6 +1,6 @@
 <div class="form">
   <div class="form-container">
-    <h2>Edit Profile</h2>
+    <h1>Edit Profile</h1>
     <%= simple_form_for @chef do |f| %>
       <%= f.input :first_name %>
       <%= f.input :last_name %>
@@ -12,8 +12,7 @@
       <%= f.input :price %>
       <%= f.input :profile_photo, as: :file %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit 'Update Profile' %>
+      <%= f.button :submit, "Update Profile", class: "submit-button" %>
     <% end %>
   </div>
 </div>
-
