@@ -50,9 +50,11 @@
     <% end %>
   </div>
   <hr>
-  <% if params[:id].to_i != current_user.id %>
-    <%= link_to "Add Review", new_user_review_path(@chef) %>
-    <% end %>
+  <% if current_user %>
+    <% if params[:id].to_i != current_user.id %>
+      <%= link_to "Add Review", new_user_review_path(@chef) %>
+          <% end %>
+  <% end %>
   <h2>User Reviews</h2>
     <% if @chef.reviews_as_chef.any? %>
       <ul>
