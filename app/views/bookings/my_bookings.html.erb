@@ -1,23 +1,25 @@
-<div class="container">
-  <h1>My bookings</h1>
-  <% @bookings.each do |booking| %>
-  <p>Chef: <%= booking.chef.first_name %></p>
-  <p><%= booking.date %></p>
-  <p>status: <%= booking.status %></p>
-  <hr>
-  <% end %>
-
-  <h2>Paid booking</h2>
-  <% if @chef_bookings %>
-    <% @chef_bookings.each do |booking| %>
+<div class="form">
+  <div class="form-container">
+    <h1>My Bookings</h1>
+    <% @bookings.each do |booking| %>
+      <p>Chef: <%= booking.chef.first_name.capitalize %> <%= booking.chef.last_name.capitalize %></p>
+      <p><%= booking.date %></p>
       <p>Status: <%= booking.status %></p>
-      <p>Date: <%= booking.date %></p>
-      <p>Client name: <%= booking.user.first_name %></p>
-      <%= link_to 'confirm/decline booking', edit_booking_path(booking) %>
+      <hr>
     <% end %>
-  <% end %>
-  <hr>
-  <%= link_to 'Home', root_path %>
-  |
-  <%= link_to 'Chefs', users_path %>
+
+    <h1>Paid Bookings</h1>
+    <% if @chef_bookings %>
+      <% @chef_bookings.each do |booking| %>
+        <p>Status: <%= booking.status %></p>
+        <p>Date: <%= booking.date %></p>
+        <p>Client name: <%= booking.user.first_name.capitalize %> <%= booking.user.last_name.capitalize %></p>
+          <button type="button" class="accept-button" onclick="window.location.href='<%= edit_booking_path(booking) %>'">
+            Accept/Reject
+          </button>
+        </div>
+        <hr>
+      <% end %>
+    <% end %>
+  </div>
 </div>
