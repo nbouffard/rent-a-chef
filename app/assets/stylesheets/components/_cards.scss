@@ -1,152 +1,111 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;800&display=swap');
 
-.cards-container {
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  overflow-x: hidden;
-  border-radius: 20px;
-  align-items: center;
-  width: 1000px;
-  height: 100%;
-  padding: 0 20px;
-  padding-bottom: 5px;
-  margin: 0 auto;
-  position: relative;
-  background-color: #FDFAF6;
-  border: 1px solid rgba($color: #064420, $alpha: 0.2);
-  margin-top: 10px;
-
-}
-
 .card-price-city{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
   border: 0.5px solid black;
-  border-radius: 20px;
-  color: white;
+  border-radius: 5px;
+  padding: 12px;
+  color: black;
   background-color: #FDFAF6;
   text-align: left;
   font-size: 20px;
-  margin: 10px;
+  margin: 40px;
   padding: 5px;
-  width: 220px;
-  height: 300px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.card-price-city:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.card-price-city.default-bg {
-  background-image: linear-gradient(180deg, rgba(0,0,0,0.5383403361344538) 0%, rgba(0,0,0,0.5159313725490196) 70%, rgba(0,0,0,0.5523459383753502) 100%), url("https://i.ibb.co/NLGFp5g/rent-default.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.card-price-city.profile-bg {
-  background-size: 100%;
-  background-position: center;
-}
-
-a {
-  text-decoration: none;
-}
-
 h1{
-  margin-top: 20px;
   font-size: 30px;
   font-family: 'Montserrat', sans-serif;
   color: #064420;
   font-weight: 700;
-  margin-top: 20px;
-  padding-top: 10px;
-  text-decoration: none;
-  text-align: left;
-  width: 100%;
+  margin-left: 10px;
+  padding-top: 15px;
 }
 
 h2{
   text-decoration: solid;
+  padding-bottom: 10px;
+  padding-top: 5px;
 }
 
+.info-flex {
+  text-align: right;
+}
 .card-border {
   display: flex;
   font-size: small;
+  align-items: center;
   justify-content: space-between;
 }
 
 .card-border a {
-  font-family: 'Montserrat', sans-serif;
   font-size: 10px;
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: black;
   margin-right: 10px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,1);
-  text-decoration: none;
-}
 
-.card-border a:hover {
-  color:#7a8e81;
 }
 
 .name-city{
-  border-bottom: 0.5px solid rgb(255, 255, 255);
+  border-bottom: 0.5px solid black;
   margin-bottom: 10px;
 }
 
-.profile-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
+// .image{
+//   width: 200px;
+//   height: 100px;
+//   border-radius: 10px;
+// }
+
 
 .card-price-city h2 {
-  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   margin-left: 10px;
-  margin-top: 5px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,1);
-  text-decoration: none;
+  margin-bottom: 20px;
 }
 
 .card-price-city h3 {
-  font-family: 'Montserrat', sans-serif;
   font-size: 10px;
   margin-left: 10px;
   margin-bottom: 5px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,1);
-  text-decoration: none;
 }
 
 .card-border h2 {
-  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   margin-left: 10px;
-  font-weight: 400;
-  text-shadow: 1px 1px 3px rgba(0,0,0,1);
-  text-decoration: none;
+  font-weight: lighter;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, minmax(200px, 1fr));
-  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
   justify-items: center;
   align-items: center;
   margin: 0 auto;
-  text-decoration: none;
-  justify-content: center;
-  max-width: 1000px;
+}
+.show-img {
+  width: 400px;
+  height: 300px;
+}
+p {
+  width: 800px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.card-price-city img {
+  display: block;
+  margin-bottom: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .card-price-city .name-city {
   margin-top: 5px;
+  border-top: 0.5px solid black;
   padding-top: 15px;
 }
 
