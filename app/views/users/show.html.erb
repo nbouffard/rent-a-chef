@@ -1,6 +1,6 @@
 <div class="container-wrapper">
   <div class="button-container">
-    <%= link_to '← Back', users_path, class: 'btn-grey' %>
+    <%= link_to '← Back', users_path, class: 'btn-green' %>
   </div>
   <div class="content-container">
     <% @chef.photos.each do |photo| %>
@@ -50,26 +50,21 @@
     <% end %>
   </div>
   <hr>
+  <div class="reviews">
   <% if params[:id].to_i != current_user.id %>
-    <%= link_to "Add Review", new_user_review_path(@chef) %>
+    <%= link_to "+Add Review", new_user_review_path(@chef), class: 'btn-green' %>
     <% end %>
-  <h2>User Reviews</h2>
+  <h2 class="text-underline">User Reviews</h2>
     <% if @chef.reviews_as_chef.any? %>
-      <ul>
-        <% @chef.reviews_as_chef.each do |review| %>
-        <strong><%= review.user.first_name %>
-        <%= review.user.last_name %></strong>
-          <li>
-            <strong>Rating:</strong> <%= review.rating %>
-            <br>
-          </li>
-          <li>
-            <strong>Comment:</strong> <%= review.comment %>
-          </li>
-        <% end %>
-      </ul>
+      <% @chef.reviews_as_chef.each do |review| %>
+        <p><strong>-</strong> <%= "#{review.user.first_name[0].capitalize} #{review.user.last_name.capitalize} (#{review.created_at.strftime("%d %B %Y, %l:%M%P")})" %></p>
+        <p><em>"<%= review.comment %>"</em></p>
+        <p><strong>Rating:</strong> <%= review.rating %>*</p>
+      <% end %>
+      <hr>
     <% else %>
-      <p>No reviews available.</p>
+      <p>No reviews yet. Be the first to add a review...</p>
     <% end %>
+  </div>
   </div>
 </div>
